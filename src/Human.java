@@ -100,5 +100,25 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public void introduce() {
+        System.out.println("Salam! Mənim adım " + name + " " + surname + ".");
+        System.out.println("Doğum ilim: " + birthYear);
+        System.out.println("Telefon nömrəm: " + phoneNumber);
+        System.out.println("IQ səviyyəm: " + iq);
 
+        if (mother != null) {
+            System.out.println("Anamın adı: " + mother.getName());
+        }
+        if (father != null) {
+            System.out.println("Atamın adı: " + father.getName());
+        }
+        if (pet != null) {
+            System.out.println("Mənim ev heyvanımın adı: " + pet.getNickname());
+        }
+
+        System.out.println("Cədvəl:");
+        for (String[] dayActivity : schedule) {
+            System.out.println(Arrays.toString(dayActivity));
+        }
+    }
 }
