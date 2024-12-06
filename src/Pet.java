@@ -7,12 +7,12 @@ public class Pet {
     private int trickLevel;      // 1-100
     private String[] habits;
 
-    public Pet(String species, String nickname, int age, int trickLevel, String[] catHabits) {
+    public Pet(String species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
         setTrickLevel(trickLevel);
-        habits = new String[trickLevel];
+        this.habits =habits ;
 
     }
 
