@@ -62,7 +62,7 @@ public class Pet {
 
     public void introduce() {
         System.out.println("Salam! Mən bir " + species + " və mənim adım " + nickname + ".");
-        System.out.println("Mən " + age + " yaşım var və mənim hiylə səviyyəm" + trickLevel + "'dir.");
+        System.out.println("Mənim " + age + " yaşım var və mənim hiylə səviyyəm" + trickLevel + "'dir.");
         System.out.println("Mənim vərdişlərim bunlardır : " + Arrays.toString(habits));
     }
 
