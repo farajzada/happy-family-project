@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
     private String name;
@@ -10,6 +11,7 @@ public class Human {
     private Human mother;
     private Human father;
     private String[][] schedule;
+    private Family family;
 
 
     public Human(String name, String surname, int birthYear, String phoneNumber, int iq, Pet pet, Human mother, Human father, String[][] schedule) {
@@ -100,6 +102,14 @@ public class Human {
         this.schedule = schedule;
     }
 
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
     public void introduce() {
         System.out.println("Salam! Mənim adım " + name + " " + surname + ".");
         System.out.println("Doğum ilim: " + birthYear);
@@ -120,5 +130,35 @@ public class Human {
         for (String[] dayActivity : schedule) {
             System.out.println(Arrays.toString(dayActivity));
         }
+
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return birthYear == human.birthYear && iq == human.iq && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(phoneNumber, human.phoneNumber) && Objects.equals(pet, human.pet) && Objects.equals(mother, human.mother) && Objects.equals(father, human.father) && Objects.deepEquals(schedule, human.schedule);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, birthYear, phoneNumber, iq, pet, mother, father, Arrays.deepHashCode(schedule));
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthYear=" + birthYear +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", iq=" + iq +
+                ", pet=" + pet +
+                ", mother=" + mother +
+                ", father=" + father +
+                ", schedule=" + Arrays.toString(schedule) +
+                '}';
+    }
+
+
 }
